@@ -1,7 +1,6 @@
 package hello.contollers;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import hello.Greeting;
+import hello.Models.Greeting;
 import hello.StaticFunctions;
 import org.springframework.web.bind.annotation.*;
 

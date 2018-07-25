@@ -4,8 +4,6 @@ import hello.Models.Customer;
 import hello.services.CustomerServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -38,7 +36,8 @@ public class CustomerController {
 
     @RequestMapping(value = "/remove", method = RequestMethod.GET, params = "name")
     @ResponseBody
-    public String removeCustomer(@RequestParam(name = "name") String PName){
+    public String removeCustomer(@RequestParam(name = "name") String PName)
+    {
         String r = "";
         List<Customer> customers = getIDList(PName);
         for(Customer c : customers){

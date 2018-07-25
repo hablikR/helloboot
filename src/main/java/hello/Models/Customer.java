@@ -1,16 +1,13 @@
-package hello;
+package hello.Models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
 public class Customer {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -18,6 +15,10 @@ public class Customer {
     private String name;
 
     public Customer(String name) {
+        this.name = name;
+    }
+    public Customer(Long id, String name) {
+        this.id =id;
         this.name = name;
     }
     public Long getId() {

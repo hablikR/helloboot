@@ -1,11 +1,11 @@
 package hello.Models;
 
+
 import javax.persistence.*;
 
 
 @Entity
-@Table
-
+@Table(name ="Customer")
 public class Customer {
 
     @Id

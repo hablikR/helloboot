@@ -4,6 +4,8 @@ import javax.persistence.*;
 
 
 @Entity
+@Table
+
 public class Customer {
 
     @Id

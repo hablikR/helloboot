@@ -1,7 +1,7 @@
-package hello.contollers;
+package hello.contoller;
 
-import hello.Models.Devices;
-import hello.services.DeviceServices;
+import hello.model.Devices;
+import hello.service.DeviceServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

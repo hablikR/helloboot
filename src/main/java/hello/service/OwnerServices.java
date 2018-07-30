@@ -1,8 +1,7 @@
-package hello.services;
+package hello.service;
 
-import hello.Models.Customer;
-import hello.Models.Owners;
-import hello.repositorys.OwnerRepository;
+import hello.model.Owners;
+import hello.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

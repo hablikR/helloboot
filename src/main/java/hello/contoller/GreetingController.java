@@ -1,6 +1,6 @@
-package hello.contollers;
+package hello.contoller;
 
-import hello.Models.Greeting;
+import hello.model.Greeting;
 import hello.StaticFunctions;
 import org.springframework.web.bind.annotation.*;
 

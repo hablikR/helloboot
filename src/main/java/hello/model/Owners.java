@@ -1,4 +1,4 @@
-package hello.Models;
+package hello.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

@@ -3,8 +3,8 @@ package hello;
 public class StaticFunctions {
 
     //Change the first letter in a string to UpperCase
-    public String  CapitalFirstLetter(String Pstring){
+    public String  CapitalFirstLetter(String pstring){
 
-        return Pstring.substring(0,1).toUpperCase() + Pstring.substring(1);
+        return pstring.substring(0,1).toUpperCase() + pstring.substring(1);
     }
 }

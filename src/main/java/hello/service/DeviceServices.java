@@ -1,9 +1,8 @@
-package hello.services;
+package hello.service;
 
 
-import hello.Models.Devices;
-import hello.Models.Owners;
-import hello.repositorys.DeviceRepository;
+import hello.model.Devices;
+import hello.repository.DeviceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

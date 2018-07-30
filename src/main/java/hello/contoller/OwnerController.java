@@ -1,6 +1,6 @@
-package hello.contollers;
+package hello.contoller;
 
-import hello.services.OwnerServices;
+import hello.service.OwnerServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -30,45 +30,46 @@ public class CustomerController {
 
     @RequestMapping(value = "/remove", method = RequestMethod.GET, params = "id")
     @ResponseBody
-    public String removeCustomer(@RequestParam(name = "id") Long PID){
-       return removeCustomerByID(PID);
+    public String removeCustomer(@RequestParam(name = "id") Long pID){
+       return removeCustomerByID(pID);
     }
 
     @RequestMapping(value = "/remove", method = RequestMethod.GET, params = "name")
     @ResponseBody
-    public String removeCustomer(@RequestParam(name = "name") String PName)
+    public String removeCustomer(@RequestParam(name = "name") String pName)
     {
         String r = "";
-        List<Customer> customers = getIDList(PName);
+        List<Customer> customers = getIDList(pName);
         for(Customer c : customers){
            r+= removeCustomerByID(c.getId());
         }
         return r;
     }
 
-    public String removeCustomerByID(Long PID){
-        if(customerServices.isExist(PID)){
-            Optional<Customer> optionalCustomerCustomer =  customerServices.findByID(PID);
-            Customer tCustomer = optionalCustomerCustomer.get();
-            customerServices.delete(tCustomer);
-            return "Customer removed: " + tCustomer.toString();
-        }
-        return "ID is not exist!";
-    }
 
     @RequestMapping(value = "/update/{newName}", method = RequestMethod.GET)
     @ResponseBody
-    public String updateCusomerByID(@RequestParam(name = "id") Long PID, @PathVariable(value = "newName") String PName){
+    public String updateCusomerByID(@RequestParam(name = "id") Long pID, @PathVariable(value = "newName") String pName){
 
-        if(customerServices.isExist(PID)){
-            Optional<Customer> optionalCustomerCustomer =  customerServices.findByID(PID);
+        if(customerServices.isExist(pID)){
+            Optional<Customer> optionalCustomerCustomer =  customerServices.findByID(pID);
             Customer tCustomer = optionalCustomerCustomer.get();
             Customer old = new Customer(tCustomer.getId(), tCustomer.getName());
-            tCustomer.setName(PName);
+            tCustomer.setName(pName);
             customerServices.save(tCustomer);
             return "Customer updated from " + old.toString() + "to" + tCustomer;
         }
 
+        return "ID is not exist!";
+    }
+
+    public String removeCustomerByID(Long pID){
+        if(customerServices.isExist(pID)){
+            Optional<Customer> optionalCustomerCustomer =  customerServices.findByID(pID);
+            Customer tCustomer = optionalCustomerCustomer.get();
+            customerServices.delete(tCustomer);
+            return "Customer removed: " + tCustomer.toString();
+        }
         return "ID is not exist!";
     }
 

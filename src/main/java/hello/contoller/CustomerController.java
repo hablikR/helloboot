@@ -19,11 +19,11 @@ public class CustomerController {
         return this.customerServicesImpl.findAll();
     }
 
-    @RequestMapping(value = "/add/{name}", method = RequestMethod.POST)
-    public @ResponseBody String addNewCustomer(@PathVariable(value = "name") String name){
-        Customer customerItem  =new Customer(name);
-        customerServicesImpl.save(customerItem);
-        return "Customer added: " + customerItem.toString();
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @ResponseBody
+    public Customer addNewCustomer(@RequestBody Customer customer){
+        customerServicesImpl.save(customer);
+        return customer;
     }
 
     @RequestMapping(value = "/remove/{name}", method = RequestMethod.DELETE)
@@ -46,7 +46,7 @@ public class CustomerController {
         return null;
     }
 
-    public Customer removeCustomerByID(Long pID){
+    private Customer removeCustomerByID(Long pID){
         if(customerServicesImpl.isExist(pID)){
             return customerServicesImpl.deleteService(pID);
         }
